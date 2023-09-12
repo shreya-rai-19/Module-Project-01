@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- ------------ HEADER SECTION------------ -->
+
+      <div class="header">
+        <div class="top">
+          <div class="text">
+            <p>ROCK</p><p>PAPER</p><p>SCISSORS</p>
+          </div>
+          <div class="scoreboard">
+            <div class="comp-score user_comp_score">
+              <p>COMPUTER</p><p>SCORE</p>
+              <p class="comp_points" id="score">0</p>
+            </div>
+            <div class="user-score user_comp_score" id="space">
+              <p>YOUR</p><p>SCORE</p>
+              <p class="user_points" id="score">0</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ------------CHOICES SECTION------------ -->
+
+        <div class="choices">
+          <div class="rock button" data-choice="rock"><img src="images/rock.png" alt="rock" /></div>
+          <div class="scissor button" data-choice="scissor"><img src="images/scissor.png" alt="scissor" /></div>
+          <div class="paper button" data-choice="paper"><img src="images/paper.png" alt="paper" /></div>
+        </div>
+
+        <!-- ------------SELECTION SECTION ------------ -->
+
+        <div class="selection">
+          <div class="user_select_container">
+            <p class="picked">YOU PICKED</p>
+            <div class="user_green">
+              <div class="user_select"><img src="" alt="" /></div>
+            </div>
+          </div>
+          <div>
+            <div class="Show_msg">
+              <p class="winner_msg"></p>
+              <p class="against_pc"></p>
+              <button class="play_again">PLAY AGAIN</button>
+            </div>
+          </div>
+          <div class="machine_select_container">
+            <p class="picked">PC PICKED</p>
+            <div class="pc_green">
+              <div class="machine_select"><img src="" alt="" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------RULES SECTION------------ -->
+
+      <div class="rules">
+        <span class="close_x">X</span>
+        <p class="rules_text">Game Rules</p>
+        <ul class="rules_list">
+          <li>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+          <li>
+            If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+
+      <!-- ------------Next and Rules Buttons------------ -->
+
+      <div class="Buttons">
+        <button class="next">NEXT</button>
+        <button class="rules_btn">RULES</button>
+      </div>
+
+      <!-- ------------HURRAY PAGE------------ -->
+
+      <div class="hurry_page">
+        <div class="star">
+          <img src="images/Champion_cup.png" alt="Champion_cup" />
+        </div>
+        <div class="msg">
+          <h1>HURRAY!!</h1>
+          <h2>YOU WON THE GAME</h2>
+        </div>
+        <button class="playAgain">PLAY AGAIN</button>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

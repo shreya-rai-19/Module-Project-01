@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #8cc461;
+}
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin: 2em auto;
+  border-radius: 13px;
+  border: 2px solid #fff;
+}
+.text {
+  margin: 1em;
+}
+.text p {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 4px;
+}
+.scoreboard {
+  display: flex;
+  margin: 1em;
+}
+.user_comp_score {
+  margin: 5px 20px 0 20px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 9px;
+  background: #fff;
+}
+#space {
+  padding: 5px 20px 5px 20px;
+}
+.user_comp_score p {
+  margin: 0.2em;
+  text-align: center;
+  color: #656565;
+  font-family: Roboto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1.7px;
+}
+#score {
+  margin: 0px 18px 5px 18px;
+  color: #252525;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.choices {
+  display: grid;
+  grid-template-areas:
+    "a b"
+    "c c";
+  justify-content: center;
+  width: 90%;
+  margin: auto auto;
+  padding-top: 2em;
+  background-image: url("images/triangle.svg");
+  background-repeat: no-repeat;
+  background-size: 250px;
+  background-position: center center;
+  column-gap: 5em;
+}
+.choices.remove {
+  display: none;
+}
+.rock {
+  position: relative;
+  padding: 25px 20px 25px 20px;
+  margin-bottom: 2em;
+  border: 15px solid rgba(0, 116, 182, 1);
+  border-radius: 50%;
+  background-color: #fff;
+  grid-area: a;
+  cursor: pointer;
+  align-self: start;
+}
+.rock:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 116, 182, 1) inset,
+    0 0 20px 2px rgba(0, 116, 182, 1);
+}
+.scissor {
+  position: relative;
+  padding: 25px 35px 25px 35px;
+  margin-bottom: 2em;
+  border: 15px solid rgba(189, 0, 255, 1);
+  border-radius: 50%;
+  background-color: #fff;
+  grid-area: b;
+  cursor: pointer;
+}
+.scissor:hover {
+  box-shadow: 0 0 10px 0 rgba(189, 0, 255, 1) inset,
+    0 0 20px 2px rgba(189, 0, 255, 1);
+}
+.paper {
+  position: relative;
+  padding: 25px 25px 15px 25px;
+  border: 15px solid rgba(255, 169, 67, 1);
+  border-radius: 50%;
+  background-color: #fff;
+  grid-area: c;
+  justify-self: center;
+  cursor: pointer;
+  margin-bottom: 2em;
+}
+.paper:hover {
+  box-shadow: 0 0 10px 0 rgba(255, 169, 67, 1) inset, 0 0 20px 2px silver;
+}
+.selection {
+  display: none;
+}
+.selection.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+  margin-top: 15vh;
+  gap: 4em;
+}
+.picked {
+  margin: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.7px;
+}
+.Show_msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.winner_msg {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 3.9px;
+}
+.against_pc {
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+.play_again {
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 9px;
+  background: #fff;
+  color: #6b6b6b;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+.play_again:hover {
+  background-color: #2eb732;
+  color: white;
+  border: 2px solid silver;
+}
+.green_effect {
+  position: absolute;
+  display: flex;
+  z-index: -1;
+  pointer-events: none;
+}
+.rules {
+  font-family: "Roboto", sans-serif;
+  width: 260px;
+  position: absolute;
+  right: 5%;
+  top: 34%;
+  border: 6px solid white;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #004429;
+  color: white;
+  border-radius: 7px;
+}
+.rules.show {
+  display: none;
+}
+.rules_text {
+  text-align: center;
+  align-content: center;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.rules_list {
+  padding: 10px 20px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style-type: square;
+}
+.rules_list li::marker {
+  color: #ffd600;
+}
+.close_x {
+  position: absolute;
+  top: -13%;
+  right: -13%;
+  background-color: #ff0000;
+  font-size: 28px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  border: 6px solid white;
+  font-weight: 600;
+}
+.Buttons {
+  display: flex;
+}
+.rules_btn {
+  position: absolute;
+  top: 90%;
+  right: 1%;
+  margin-right: 110px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.next {
+  display: none;
+}
+.next.show {
+  display: flex;
+  position: absolute;
+  top: 90%;
+  right: 0%;
+  margin-right: 40px;
+  padding: 5px 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.main.hide {
+  display: none;
+}
+.hurry_page {
+  display: none;
+}
+.hurry_page.show {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 400px;
+  background-image: url("images/stars.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+}
+.star img {
+  margin-top: 3em;
+  width: 200px;
+  height: 200px;
+}
+.msg h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 91px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 9.1px;
+  margin: 0;
+}
+.msg h2 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 41px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 4.1px;
+}
+.playAgain {
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 9px;
+  background: #fff;
+  color: #6b6b6b;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
